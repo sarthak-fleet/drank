@@ -570,7 +570,7 @@ export default function Drank() {
                   onClick={() => {
                     const text = predictions.map((p, i) => `${i+1}. ${p.domain}${p.note ? ` — ${p.note}` : ''}`).join('\n');
                     const issueUrl = `https://github.com/sarthak-fleet/drank/issues/new?title=DR+Prediction+from+drank&body=${encodeURIComponent('My predicted top performers:\n\n' + text + '\n\nSubmitted from the drank app at ' + new Date().toISOString())}`;
-                    window.open(issueUrl, '_blank');
+                    window.open(issueUrl, '_blank', 'noopener,noreferrer');
                     // Also copy
                     navigator.clipboard?.writeText(text).catch(() => {});
                     // Note: showToast is not directly exposed; the action is visible via the opened tab + clipboard

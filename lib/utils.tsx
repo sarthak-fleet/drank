@@ -357,12 +357,13 @@ export function getWeeklyChange(domain: TrackedDomain): { delta: number; directi
 
 export function getNextAutoRefreshDate(lastAuto: number | null, enabled: boolean): Date | null {
   if (!enabled) return null;
-  const base = lastAuto || Date.now();
-  return new Date(base + 7 * 24 * 60 * 60 * 1000);
+  if (lastAuto == null) return null;
+  return new Date(lastAuto + 7 * 24 * 60 * 60 * 1000);
 }
 
 export function formatNextAuto(lastAuto: number | null, enabled: boolean): string {
   if (!enabled) return 'Auto-refresh off';
+  if (lastAuto == null) return 'Will run on next visit';
   const next = getNextAutoRefreshDate(lastAuto, enabled);
   if (!next) return 'Auto-refresh on';
   const diff = next.getTime() - Date.now();
@@ -386,4 +387,3 @@ export function computeGainersLosers(domains: TrackedDomain[]) {
 
   return { gainers, losers };
 }
-
