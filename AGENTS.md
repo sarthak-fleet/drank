@@ -13,3 +13,4 @@ Also read and follow the shared fleet-level agent standard at `../AGENTS.md`. Tr
 - **Stack**: Next.js 16, React 19, Tailwind v4, localStorage-only (no backend DB).
 - **Local dev**: `npm run dev` (http://localhost:3000)
 - **Deploy**: Cloudflare Pages (static export via `output: 'export'`, served from `out/`).
+- **CI deploy secret**: `CLOUDFLARE_API_TOKEN` must be set in GitHub repo secrets for the deploy job to push to Cloudflare Pages. Create a token with `Cloudflare Pages:Edit` permission at https://dash.cloudflare.com/profile/api-tokens.
