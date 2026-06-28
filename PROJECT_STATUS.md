@@ -1,5 +1,5 @@
 # drank — PROJECT STATUS
-Last updated: 2026-06-20
+Last updated: 2026-06-28
 
 ## Why / What
 
@@ -117,4 +117,4 @@ Last updated: 2026-06-20
 
 - Real background server crons cannot touch per-user localStorage — weekly refresh only when tab is open.
 - GitHub Action lives under project-local `.github/` rather than fleet monorepo root.
-- No automated tests; manual smoke on add/refresh/export flows only.
+- Limited test coverage (vitest configured, `lib/utils.test.ts` exists); manual smoke on add/refresh/export flows.
